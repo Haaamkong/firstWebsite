@@ -18,6 +18,14 @@
 
 <body>
   <h1><a href="index.html">WEB</a></h1>
+  <input type="button" value="night" onclick="
+    document.querySelector('body').style.backgroundColor = 'black';
+    document.querySelector('body').style.color = 'white';
+  ">
+  <input type="button" value="day" onclick="
+  document.querySelector('body').style.backgroundColor = 'white';
+  document.querySelector('body').style.color = 'black';
+  ">
   <div id="grid">
     <ol>
       <li><a href="1.html">HTML</a></li>
@@ -26,7 +34,7 @@
     </ol>
 
     <div class="contents">
-      <h2>WEB콩띵콩땅콩</h2>
+      <h2 id="h2" class="h2">WEB콩띵콩땅콩</h2>
       <strong>행콩은 존잘쓰</strong>
       <p><a href="https://www.w3.org/TR/2011/WD-html5-20110405/" target="-blank" title="html5 speicification">Hypertext
           Markup Language (HTML)</a> <strong>creating <u>web</u>pages</strong> and web applications.
