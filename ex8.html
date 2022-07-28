@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+  <h1>Loop & Array</h1>
+  <script>
+    const name = ['hamkong', 'jjiggumi', 'ani', 'muya', 'branch', 'merge',];
+  </script>
+  <h2>name</h2>
+  <ul>
+    <script>
+      var i = 0;
+      while(i < name.length){
+      document.write(`<li>${name[i]}</li>`);
+      i = i + 1;
+      }
+
+      document.write(
+        `<li>
+           <a href="http://a.com/${name[0]}">
+             ${name[0]}
+           </a>
+         </li>
+        `);
+
+    </script>
+  </ul>
+
+  <li>
+    <a href="http://a.com/hamkong">
+      hamkong
+    </a>
+  </li>
+
+
+</body>
+</html>
