@@ -14,33 +14,80 @@
   <title>WEB1 - Welcomekong</title>
   <meta charset="utf-8">
   <link rel="stylesheet" href="style.css">
+  <script>
+    var theme = 'night';
+
+    window.onload = (() => {
+      var buttons = document.querySelectorAll('.night_day');
+      for (let i = 0; i < buttons.length; i++) {
+        buttons[i].value = theme;
+        buttons[i].style.backgroundColor = 'blue';
+      }
+    });
+
+    function changeBody() {
+      var target = document.querySelector('body');
+      if (theme === 'day') {
+        target.style.backgroundColor = 'black';
+        target.style.color = 'white';
+      } else {
+        target.style.backgroundColor = 'white';
+        target.style.color = 'black';
+      }
+    }
+
+    function changeButton() {
+      var buttons = document.querySelectorAll('.night_day');
+      var j = 0;
+      while (j < buttons.length) {
+        if (theme === 'day') {
+          buttons[j].style.backgroundColor = 'red';
+        } else {
+          buttons[j].style.backgroundColor = 'blue';
+        }
+        buttons[j].value = theme;
+        j++;
+
+      }
+    }
+
+    function changeATag() {
+      var alist = document.querySelectorAll('a');
+      var i = 0;
+      while (i < alist.length) {
+        if (theme === 'day') {
+          alist[i++].style.color = 'powderblue';
+        } else {
+          alist[i++].style.color = 'blue';
+        }
+      }
+    }
+
+    function nightDayHandler() {
+      // 삼항 연산자
+      // theme === 'night' ? theme = 'day' : theme = 'night';
+
+      if (theme === 'night') theme = 'day';
+      else theme = 'night';
+
+      changeBody();
+      changeATag();
+      changeButton();
+    }
+  </script>
 </head>
 
 <body>
   <h1><a href="index.html">WEB</a></h1>
-  <input id="night_day" type="button" value="night" onclick="
-  var target = document.querySelector('body')
-  if(this.value === 'night'){
-    target.style.backgroundColor = 'black';
-    target.style.color = 'white';
-    this.value = 'day';
-    var alist = document.querySelectorAll('a');
-    var i = 0;
-    while(i < alist.length){
-      alist[i++].style.color = 'powderblue';
-    }
-
-    } else {
-    target.style.backgroundColor = 'white';
-    target.style.color = 'black';
-    this.value = 'night';
-    var alist = document.querySelectorAll('a');
-    var i = 0;
-    while(i < alist.length){
-      alist[i++].style.color = 'blue';
-    }
-  }
-  ">
+  <input class="night_day" type="button" value="" onclick="nightDayHandler();">
+  <input class="night_day" type="button" value="" onclick="nightDayHandler();">
+  <input class="night_day" type="button" value="" onclick="nightDayHandler();">
+  <input class="night_day" type="button" value="" onclick="nightDayHandler();">
+  <input class="night_day" type="button" value="" onclick="nightDayHandler();">
+  <input class="night_day" type="button" value="" onclick="nightDayHandler();">
+  <input class="night_day" type="button" value="" onclick="nightDayHandler();">
+  <input class="night_day" type="button" value="" onclick="nightDayHandler();">
+  <input class="night_day" type="button" value="" onclick="nightDayHandler();">
   <div id="grid">
     <ol>
       <li><a href="1.html">HTML</a></li>
@@ -97,18 +144,7 @@
     })();
   </script>
   <!--End of Tawk.to Script-->
-  <input id="night_day" type="button" value="night" onclick="
-  var target = document.querySelector('body')
-  if(this.value === 'night'){
-    target.style.backgroundColor = 'black';
-    target.style.color = 'white';
-    this.value = 'day';
-    } else {
-    target.style.backgroundColor = 'white';
-    target.style.color = 'black';
-    this.value = 'night';
-    }
-  ">
+
 
 </body>
 
