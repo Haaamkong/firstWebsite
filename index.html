@@ -15,79 +15,64 @@
   <meta charset="utf-8">
   <link rel="stylesheet" href="style.css">
   <script>
-    var theme = 'night';
+    var theme = 'day';
 
-    window.onload = (() => {
-      var buttons = document.querySelectorAll('.night_day');
-      for (let i = 0; i < buttons.length; i++) {
-        buttons[i].value = theme;
-        buttons[i].style.backgroundColor = 'blue';
-      }
-    });
-
-    function changeBody() {
-      var target = document.querySelector('body');
-      if (theme === 'day') {
-        target.style.backgroundColor = 'black';
-        target.style.color = 'white';
-      } else {
-        target.style.backgroundColor = 'white';
-        target.style.color = 'black';
-      }
+    const Body = {
+      setBackgroundColor: function(color) {
+      document.querySelector('body').style.backgroundColor = color;
+    },
+      setColor:function(color) {
+      document.querySelector('body').style.color = color;
+    }
     }
 
-    function changeButton() {
-      var buttons = document.querySelectorAll('.night_day');
-      var j = 0;
-      while (j < buttons.length) {
-        if (theme === 'day') {
-          buttons[j].style.backgroundColor = 'red';
-        } else {
-          buttons[j].style.backgroundColor = 'blue';
-        }
-        buttons[j].value = theme;
-        j++;
-
-      }
-    }
-
-    function changeATag() {
+    const A = {
+      setColor: function (color) {
       var alist = document.querySelectorAll('a');
       var i = 0;
       while (i < alist.length) {
-        if (theme === 'day') {
-          alist[i++].style.color = 'powderblue';
-        } else {
-          alist[i++].style.color = 'blue';
-        }
+        alist[i++].style.color = color;
       }
     }
 
+    }
+
+    function setButton(backgroundColor, value) {
+      var buttons = document.querySelectorAll('.night_day');
+      var j = 0;
+      while (j < buttons.length) {
+        buttons[j].style.backgroundColor = backgroundColor;
+        buttons[j].value = value;
+        j++;
+      }
+    }
+
+
     function nightDayHandler() {
-      // 삼항 연산자
-      // theme === 'night' ? theme = 'day' : theme = 'night';
+      console.log(theme);
 
-      if (theme === 'night') theme = 'day';
-      else theme = 'night';
+      if (theme === 'night') {
+        Body.setBackgroundColor('white');
+        Body.setColor('black');
+        A.setColor('blue');
+        setButton('blue', 'night');
+        theme = 'day';
+      }
+      else if(theme === 'day') {
+        Body.setBackgroundColor('black');
+        Body.setColor('white');
+        A.setColor('powderblue');
+        setButton('red', 'day');
+        theme = 'night';
+      }
 
-      changeBody();
-      changeATag();
-      changeButton();
     }
   </script>
 </head>
 
 <body>
   <h1><a href="index.html">WEB</a></h1>
-  <input class="night_day" type="button" value="" onclick="nightDayHandler();">
-  <input class="night_day" type="button" value="" onclick="nightDayHandler();">
-  <input class="night_day" type="button" value="" onclick="nightDayHandler();">
-  <input class="night_day" type="button" value="" onclick="nightDayHandler();">
-  <input class="night_day" type="button" value="" onclick="nightDayHandler();">
-  <input class="night_day" type="button" value="" onclick="nightDayHandler();">
-  <input class="night_day" type="button" value="" onclick="nightDayHandler();">
-  <input class="night_day" type="button" value="" onclick="nightDayHandler();">
-  <input class="night_day" type="button" value="" onclick="nightDayHandler();">
+  <input class="night_day" type="button" value="night" onclick="nightDayHandler();">
   <div id="grid">
     <ol>
       <li><a href="1.html">HTML</a></li>

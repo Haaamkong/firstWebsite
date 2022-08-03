@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+
+<body>
+  <h1>Object</h1>
+  <h2>Create</h2>
+  <script>
+    var coworkers = {
+      "programmer": "jjiggumi",
+      "king": "hamkong",
+
+    };
+
+    document.write(`king : ${coworkers.king}<br>`);
+    document.write(`programmer : ${coworkers.programmer}<br>`);
+    coworkers.airpurifier = ['ani', 'muya'];
+    document.write(`airpurifier : ${coworkers.airpurifier}<br>`);
+    coworkers["tiny airpurifier"] = "branch";
+    document.write(`tiny airpurifier : ${coworkers['tiny airpurifier']}`);
+  </script>
+  <h2>Iterate</h2>
+  <script>
+    for (const key in coworkers) {
+      document.write(`${key}: ${coworkers[key]}<br>`);
+    }
+    const bbb = [1, 2, 3, 4, 5];
+    document.write(bbb);
+  </script>
+  <h2>Property & Method</h2>
+  <script>
+    coworkers.showAll = function () {
+      for (const key in this) {
+        if (key === 'showAll') continue;
+        document.write(`${key}: ${this[key]}<br>`);
+      }
+    }
+    coworkers.showAll();
+
+    // es6 arrow function
+    // const a = () => {}
+
+    // 함수 표현식
+    // const b = function () {}
+
+    // 선언형
+    // function c() {}
+
+    const numberList = [1,2,3,4];
+    document.write(numberList[0]);
+
+  </script>
+</body>
+
+</html>
