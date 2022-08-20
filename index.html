@@ -14,60 +14,8 @@
   <title>WEB1 - Welcomekong</title>
   <meta charset="utf-8">
   <link rel="stylesheet" href="style.css">
-  <script>
-    var theme = 'day';
-
-    const Body = {
-      setBackgroundColor: function(color) {
-      document.querySelector('body').style.backgroundColor = color;
-    },
-      setColor:function(color) {
-      document.querySelector('body').style.color = color;
-    }
-    }
-
-    const A = {
-      setColor: function (color) {
-      var alist = document.querySelectorAll('a');
-      var i = 0;
-      while (i < alist.length) {
-        alist[i++].style.color = color;
-      }
-    }
-
-    }
-
-    function setButton(backgroundColor, value) {
-      var buttons = document.querySelectorAll('.night_day');
-      var j = 0;
-      while (j < buttons.length) {
-        buttons[j].style.backgroundColor = backgroundColor;
-        buttons[j].value = value;
-        j++;
-      }
-    }
-
-
-    function nightDayHandler() {
-      console.log(theme);
-
-      if (theme === 'night') {
-        Body.setBackgroundColor('white');
-        Body.setColor('black');
-        A.setColor('blue');
-        setButton('blue', 'night');
-        theme = 'day';
-      }
-      else if(theme === 'day') {
-        Body.setBackgroundColor('black');
-        Body.setColor('white');
-        A.setColor('powderblue');
-        setButton('red', 'day');
-        theme = 'night';
-      }
-
-    }
-  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="colors.js"></script>
 </head>
 
 <body>
